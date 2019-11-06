@@ -1,0 +1,7 @@
+{
+  "name": "mango",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
