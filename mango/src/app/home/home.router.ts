@@ -9,8 +9,8 @@ const routes: Routes = [
         component : HomePage,
         children: [
             {
-              path: 'feed',
-              loadChildren: () => import ('../pages/feed/feed.module').then(n => n.FeedPageModule)
+              path: 'profile',
+              loadChildren: () => import ('../pages/profile/profile.module').then(n => n.ProfilePageModule)
             },
             {
                 path: 'notifications',

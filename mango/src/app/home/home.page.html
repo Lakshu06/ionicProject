@@ -4,16 +4,17 @@
 <ion-tabs >
     <ion-header>
         <ion-toolbar color= "success">
-          <ion-title><ion-icon name="home"></ion-icon>Home</ion-title>
+          <ion-title><ion-icon name="home" (click)="showdata()"></ion-icon>Home</ion-title>
+          <ion-title slot ="end"><ion-icon name="log-out"  (click) = "navigatebacktosigninpage()"></ion-icon>Logout</ion-title> 
         </ion-toolbar>
       </ion-header>
       
       
       
   <ion-tab-bar slot="bottom" color = "dark">
-    <ion-tab-button tab="feed">
-      <ion-icon name="paper"></ion-icon>
-      <ion-label>feed</ion-label>
+    <ion-tab-button tab="profile">
+      <ion-icon name="contact"></ion-icon>
+            <ion-label>profile</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="messages">
@@ -31,5 +32,4 @@
       <ion-label>Settings</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>
