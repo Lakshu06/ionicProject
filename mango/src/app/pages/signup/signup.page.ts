@@ -21,21 +21,14 @@ user: FormGroup;
   constructor(private router: Router , fb: FormBuilder , private signupService: LoginsignupService) {
     this.user = fb.group({
       username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.compose([
-        Validators.required,
-        // Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')
-        Validators.pattern('[A-Za-z0-9\d@$!%*?&]{8,}$')
-      ])),
-       email : new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    ])),
+    password: new FormControl('', Validators.required),
+       email : new FormControl('', Validators.required),
     firstname: new FormControl('', Validators.required),
  lastname: new FormControl('', Validators.required)
   });
   }
   ngOnInit() {}
-navigatetohome() {
+navigatetohomefromsignup() {
   // tslint:disable-next-line: no-unused-expression
   // this.user.value;
   this.signupService.addtosignupdata(this.user.value).subscribe((val) => {

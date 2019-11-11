@@ -12,13 +12,11 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
-  navigatetohome() {
-this.router.navigate(['profile']);
-  }
   showdata() {
-    console.log('homepage');
+    this.router.navigate(['home']);
   }
   navigatebacktosigninpage() {
+    localStorage.removeItem('user');
     this.router.navigate(['login']);
   }
 }

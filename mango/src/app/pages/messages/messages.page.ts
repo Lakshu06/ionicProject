@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-messages',
@@ -12,4 +13,7 @@ export class MessagesPage implements OnInit {
   ngOnInit() {
   }
 
+  delete(){
+  swal("successfully Deleted"); 
+  }
 }
