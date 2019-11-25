@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import {MainService} from '../../_services/main.service';
+
 
 @Component({
   selector: 'app-showdetailsofitems',
@@ -7,16 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./showdetailsofitems.page.scss'],
 })
 export class ShowdetailsofitemsPage implements OnInit {
-  getValue: any;
+ itemDetails :any;
   images = ['1.jpeg', '2.jpeg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'];
-  constructor(public router: Router) { }
+    constructor(
+    private route: ActivatedRoute,
+     private router: Router,
+     private mainService: MainService ){}
 
   ngOnInit() {
-    // // this.getValue = this._router.snapshot.paramMap.get('item');
-    // console.log(JSON.parse(this.getValue));
-  }
+    this.itemDetails = this.mainService.currentData;
+    console.log(this.itemDetails);
+    }
 
   backtohome() {
     this.router.navigateByUrl('/card');
   }
+
 }

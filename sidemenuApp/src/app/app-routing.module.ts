@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'slides', loadChildren: () => import('./pages/slides/slides.module').then(m => m.SlidesPageModule) },
   { path: 'upload-image', loadChildren: () => import('./pages/upload-image/upload-image.module').then(m => m.UploadImagePageModule) },
   {
-    path: 'showdetailsofitems', loadChildren: () => import('./pages/showdetailsofitems/showdetailsofitems.module').then(m =>
+    path: 'showdetailsofitems/:item', loadChildren: () => import('./pages/showdetailsofitems/showdetailsofitems.module').then(m =>
       m.ShowdetailsofitemsPageModule)
   }
 ];

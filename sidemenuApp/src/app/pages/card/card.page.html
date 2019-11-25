@@ -15,8 +15,8 @@
     </ion-refresher>
     <ion-list>
       <ion-item *ngFor=" let item of dataList" (click)="linktopage(item)">
+        <ion-label>{{item.id}}</ion-label>
         <ion-label>{{item.name}}</ion-label>
-        <ion-label>{{item.text}}</ion-label>
       </ion-item>
     </ion-list>
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
