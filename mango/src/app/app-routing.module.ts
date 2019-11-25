@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
 const routes: Routes = [
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   {
-    path: '',
-    loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
+    path: 'welcome',
+    loadChildren: () => import('../app/pages/welcome/welcome.module').then(m => m.WelcomePageModule)
+  },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
+  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule) },
+  { path: 'signup', loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule) },
+  // tslint:disable-next-line: max-line-length
+  { path: 'setting', loadChildren: './pages/setting/setting.module#SettingPageModule' },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+    path: 'notification',
+    loadChildren: () => import('./pages/notifications/notifications.module').then(m => m.NotificationsPageModule)
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./pages/messages/messages.module').then(m => m.MessagesPageModule)
+  },
 ];
 @NgModule({
   imports: [
@@ -17,4 +30,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

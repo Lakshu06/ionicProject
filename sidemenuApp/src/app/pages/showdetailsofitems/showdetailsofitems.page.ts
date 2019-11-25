@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ShowdetailsofitemsPage implements OnInit {
   getValue: any;
-
+  images = ['1.jpeg', '2.jpeg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'];
   constructor(public router: Router) { }
 
   ngOnInit() {

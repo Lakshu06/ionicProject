@@ -8,5 +8,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let img of images">
+      <img src="./slide-4.png" />
+      <img src="assets/icon/{{img}}" class="thumb-img" imageViewer />
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>

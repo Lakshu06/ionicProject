@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfilePage } from '../pages/profile/profile.page';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,8 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
-  showdata() {
-    this.router.navigate(['home']);
+  backtohome() {
+    this.router.navigate(['profile']);
   }
   navigatebacktosigninpage() {
     localStorage.removeItem('user');

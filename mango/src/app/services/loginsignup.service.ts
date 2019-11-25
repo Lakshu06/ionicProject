@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient , HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -22,15 +22,15 @@ export class LoginsignupService {
     console.log(signupdata);
     return this.http.post<any>(this.signupurl, signupdata);
   }
-//login
+  //login
 
-findlogindata(): Observable<any[]> {
-    return this.http.get<any[]>(this.loginurl );
+  findlogindata(): Observable<any[]> {
+    return this.http.get<any[]>(this.loginurl);
 
   }
 
-  loginpostdata(data){
+  loginpostdata(data) {
     console.log(data);
-    return  this.http.post<any>(this.loginurl, data);
+    return this.http.post<any>(this.loginurl, data);
   }
 }

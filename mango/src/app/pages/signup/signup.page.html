@@ -1,54 +1,66 @@
 <ion-header>
-  <ion-toolbar color = "success">
-    <ion-title >signup</ion-title>
+  <ion-toolbar color="success">
+    <ion-title>signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
-    <ion-content>
-        <!-- <app-logo></app-logo> -->
-        
-        <h1><app-logo></app-logo><h2>Create Account</h2></h1>
-       
-        <form [formGroup] = "user">
-            <ion-list>
+<ion-content>
+  <!-- <app-logo></app-logo> -->
 
-                <ion-item>
-                    <ion-label position = "floating"><ion-icon name="mail-open"></ion-icon>Email</ion-label>
-                    <ion-input type= "email" formControlName= "email"></ion-input>
-                    </ion-item>
+  <h1>
+    <app-logo></app-logo>
+    <h2>Create Account</h2>
+  </h1>
 
-             <ion-item>
-              <ion-label position = "floating"><ion-icon name="contact"></ion-icon>Username</ion-label>
-              <ion-input type= "text" formControlName="username"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                  <ion-label position = "floating"><ion-icon name="lock"></ion-icon>Password</ion-label>
-                  <ion-input type= "password" formControlName="password" ></ion-input>
-                 <ion-icon name="eye" slot ="end" (click)="showHide()"></ion-icon>  
-                </ion-item>
-                
-                <ion-item>
-                  <ion-label position = "floating"><ion-icon name="lock"></ion-icon>Firstname</ion-label>
-                  <ion-input type= "text" formControlName="firstname" ></ion-input>
-                  <ion-icon name="arrow-forward" slot ="end"></ion-icon>
-                 
-                </ion-item>
-                <ion-item>
-                  <ion-label position = "floating"><ion-icon name="lock"></ion-icon>Lastname</ion-label>
-                  <ion-input type= "text" formControlName="lastname" ></ion-input>
-                  <ion-icon name="arrow-forward" slot ="end"></ion-icon>
-                 
-                </ion-item>
+  <form [formGroup]="user">
+    <ion-list>
 
-                  <ion-item>
-                      Already you have account ?
-                      <a [routerLink]="['/login']"  >Sign In</a> 
-                    </ion-item>
-           <ion-button expand = "block" shape='round' color = "success" (click)="navigatetohomefromsignup()" [disabled]= "!user.valid" >Sign Up</ion-button>
-          </ion-list>
-        </form>
-      
-      </ion-content>
-      
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="mail-open"></ion-icon>Email
+        </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="contact"></ion-icon>Username
+        </ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="lock"></ion-icon>Password
+        </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="lock"></ion-icon>Firstname
+        </ion-label>
+        <ion-input type="text" formControlName="firstname"></ion-input>
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="lock"></ion-icon>Lastname
+        </ion-label>
+        <ion-input type="text" formControlName="lastname"></ion-input>
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+
+      </ion-item>
+
+      <ion-item>
+        Already you have account ?
+        <a [routerLink]="['/login']">Sign In</a>
+      </ion-item>
+      <ion-button expand="block" shape='round' color="success" (click)="navigatetohomefromsignup()"
+        [disabled]="!user.valid">Sign Up</ion-button>
+    </ion-list>
+  </form>
+
+</ion-content>
