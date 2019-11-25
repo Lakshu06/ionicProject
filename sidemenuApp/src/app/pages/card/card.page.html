@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title (click)=" backtohome() ">
+      <ion-icon name="arrow-back"></ion-icon>
+      infinite scroll
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class=" ion-padding">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+        refreshingText="Refreshing..."></ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+      <ion-item *ngFor=" let item of dataList" (click)="linktopage(item)">
+        <ion-label>{{item.name}}</ion-label>
+        <ion-label>{{item.text}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
+  </div>
+</ion-content>
+<!-- <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let i of dataList">{{i}}</ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content> -->

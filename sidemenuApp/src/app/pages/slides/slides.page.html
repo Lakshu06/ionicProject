@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title (click)=" backtohome() ">
+      <ion-icon name="arrow-back"></ion-icon>back
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides class="image-slider" zoom="true" loop="true" slidesPerView="2">
+
+    <ion-slide *ngFor="let img of images ; let i=index">
+      <img src="assets/icon/{{img}}" class="thumb-img" imageViewer />
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
