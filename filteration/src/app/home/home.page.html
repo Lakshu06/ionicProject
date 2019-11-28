@@ -1,0 +1,17 @@
+<ion-router-outlet></ion-router-outlet>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>DataPage</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-input>
+            <ion-icon name="search"></ion-icon>
+        </ion-input>
+       <ion-button color ='secondary'> <ion-icon name="funnel"  (click)= "gotoFilterpage()"></ion-icon>Filter
+       </ion-button> </ion-item>
+    <ion-item *ngFor="let x of items">
+        <ion-label > {{x}}</ion-label>
+    </ion-item>
+</ion-content>
