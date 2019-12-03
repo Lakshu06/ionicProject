@@ -1,29 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title><ion-icon name ="arrow-back" (click)="backtohomepage()"></ion-icon>filterpage</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      <ion-icon name="arrow-back" (click)='backtohomepage()'></ion-icon>filterpage
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class = "ion-padding">
-  <ion-icon name="funnel" slot="end"></ion-icon>
-  <ion-item class ="ion-padding" (click) = "onclick($event)">
+<ion-content class="ion-padding">
 
-    <ion-grid >All</ion-grid>
-    <ion-grid>Categories</ion-grid>
-    <ion-grid>Pricerange</ion-grid>
-    <ion-grid>Color</ion-grid>
-
+  <ion-item class = "colorchange">
+    <ion-label onclick = "">All</ion-label>
   </ion-item>
 
-  <ion-item class ="ion-padding">
-    <ion-label>Categories</ion-label>
+   <ion-item>
+    <ion-label>categories</ion-label>
+    <ion-select  interface="popover"  multiple="true"  [(ngModel)]="key" (ionChange)="eventFunction($event)">
+    <ion-select-option  *ngFor="let key of dataFilter.categories" value="{{key.title}}">{{key.title}}</ion-select-option>
+    </ion-select>
   </ion-item>
 
-  <ion-item class ="ion-padding">
-    <ion-label>Pricerange</ion-label>
+<ion-item>
+    <ion-label>price</ion-label>
+    <ion-select interface="popover" multiple="true" [(ngModel)]="key" (ionChange)="eventFunction($event)">
+    <ion-select-option value="{{key.title}}" *ngFor="let key of dataFilter.pricerange">{{key.title}}</ion-select-option>
+    </ion-select>
   </ion-item>
-    <ion-item class ="ion-padding">
-      <ion-label>Color</ion-label>
 
-    </ion-item>
-</ion-content>
+    <ion-item>
+    <ion-label>color</ion-label>
+    <ion-select interface="popover" multiple="true"  [(ngModel)]="key" (ionChange)="eventFunction($event)">
+    <ion-select-option value="{{key.title}}" *ngFor="let key of dataFilter.color">{{key.title}}</ion-select-option>
+    </ion-select>
+  </ion-item> 
+
+ </ion-content> 
+
+  <ion-footer>
+    <ion-toolbar color = "medium">
+ <ion-button (click)="Apply()" item-end>Apply</ion-button>
+   <ion-button (click)="clear()" slot = "end">clear</ion-button>
+    </ion-toolbar>
+  </ion-footer>

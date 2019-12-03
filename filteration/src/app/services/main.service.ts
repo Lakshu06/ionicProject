@@ -5,15 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class MainService {
 
-  filterdata: object =  {
-    categories: [{"title": "winterwear"},{"title": "topwear" },
-                   {"title":"bottomwear"},{"title":"footwear" }],
+ data: object =  { "categories": [{ "title" : "winterwear"},{"title": "topwear" },{"title":"bottomwear"},
+                                            { "title":"flats" },{ "title":"heels" },{ "title":"shoes" }
+],
                                  
-    pricerange : [{ "range" :"123" },{ "range" :"342" },{ "range" :"57654" }],
+                           "pricerange" : [{ "title" :"500" },{ "title" :"1000" },{ "title" :"10000" }],
                    
                   
-      color: [{ "colorType" :" black"},{ "colorType" :" black"},{ "colorType" :" black"},{ "colorType" :" black"} ]
+               "color" : [{ "title" :" black"},{ "title" :" blue"},{ "title" :" green"} ]
                               
                };
+   public filteritem : any;
   constructor() { }
-}
+ 
+ }
